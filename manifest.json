@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Outlook工数算出君",
+  "version": "1.0",
+  "description": "Outlook Web版のカレンダーから、週・月ビューで表示されている予定の時間と所要時間を簡単に抽出・一覧表示できます。",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://outlook.live.com/*",
+    "*://outlook.office.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://outlook.live.com/*", "*://outlook.office.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

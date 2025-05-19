@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Outlook Events</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>Outlook Calendar Events</h1>
+  <div id="event-list">
+    <table>
+      <thead>
+        <tr>
+          <th>タイトル</th>
+          <th>開始時間</th>
+          <th>終了時間</th>
+          <th>所要時間</th>
+        </tr>
+      </thead>
+      <tbody id="events-table-body">
+        <!-- Event rows will be added here by popup.js -->
+      </tbody>
+    </table>
+  </div>
+  <div id="total-duration"></div>
+  <button id="copy-csv" class="button">CSVとしてコピー</button>
+
+  <h2>生成AIで分析</h2>
+  <textarea id="analysis-prompt" rows="10" cols="50" readonly></textarea>
+  <button id="analyze-ai" class="button">生成AIで分析する</button>
+
+  <div id="popup-tour-overlay" class="overlay">
+    <div class="instructions-box">
+      <h2>生成AIでの分析手順</h2>
+      <p>「生成AIで分析する」ボタンをクリックすると、分析指示と予定のCSVデータがクリップボードにコピーされ、生成AIサイトが新しいタブで開きます。</p>
+      <p>以下の手順で分析を進めてください。</p>
+      <ol>
+        <li>開いた生成AIサイトのチャット入力欄に、クリップボードの内容（分析指示とCSVデータ）を貼り付けます。</li>
+        <li>生成AIに分析を実行させます。</li>
+      </ol>
+      <img src="Chat.gif" alt="生成AIでの操作デモ" class="instruction-gif">
+      <button id="proceed-to-ai-site" class="button">生成AIサイトを開く</button>
+      <div class="dont-show-again">
+        <input type="checkbox" id="dont-show-checkbox-popup">
+        <label for="dont-show-checkbox-popup">次回からこの説明を表示しない</label>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

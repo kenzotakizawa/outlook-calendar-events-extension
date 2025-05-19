@@ -1,0 +1,169 @@
+/* popup.css: Styling for the extension popup. */
+
+body {
+  font-family: sans-serif; /* Generic sans-serif font */
+  width: 400px; /* Make the popup wider */
+  padding: 10px;
+  margin: 0;
+  background-color: #1DA1F2; /* Old Twitter blue */
+  color: white; /* White text color */
+}
+
+h1 {
+  color: white; /* White color for main heading */
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#event-list {
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  background-color: #fff; /* White background for table */
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+  color: #333; /* Dark text for readability on white background */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Light grey border */
+  padding: 8px;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  background-color: #f2f2f2; /* Light grey background for headers */
+  color: #555; /* Darker grey text for headers */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Slightly darker background for even rows */
+}
+
+#total-duration {
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: right;
+  color: white; /* White color for total duration */
+}
+
+/* Shared button styles */
+.button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #5cb85c; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px; /* Consistent margin */
+  text-align: center;
+  text-decoration: none; /* Remove underline if it were a link */
+}
+
+.button:hover {
+  background-color: #4cae4c; /* Darker green on hover */
+}
+
+.button:active {
+  background-color: #398439; /* Even darker green when active */
+}
+
+/* Style for the AI analysis section heading */
+h2 {
+  color: white; /* White color for AI section heading */
+  font-size: 16px; /* Slightly smaller than h1 */
+  margin-top: 15px; /* Add some space above */
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* Style for the analysis prompt text area */
+#analysis-prompt {
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  padding: 8px;
+  border: 1px solid #ddd; /* Match table border */
+  border-radius: 4px;
+  font-size: 14px; /* Match table text size */
+  resize: vertical; /* Allow vertical resizing */
+  margin-bottom: 10px;
+  font-family: sans-serif; /* Consistent font */
+  color: #333; /* Dark text for readability on white background */
+}
+
+/* Styles for the popup overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  z-index: 10000; /* Ensure it's on top of other popup content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Initially hidden */
+  display: none;
+}
+
+.instructions-box {
+  background-color: #fff; /* White background for instructions box */
+  color: #333; /* Dark text for readability on white background */
+  padding: 15px; /* Reduced padding */
+  border-radius: 8px;
+  max-width: 350px; /* Adjust max-width for popup */
+  max-height: 580px; /* Adjusted max height to fit better within 600px popup */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.instructions-box h2 {
+  margin-top: 0;
+  color: #333; /* Dark color for heading in instructions box */
+  font-size: 16px; /* Consistent with AI section heading */
+  margin-bottom: 10px;
+}
+
+.instructions-box p {
+  color: #666; /* Slightly lighter dark color for paragraphs */
+  margin-bottom: 8px; /* Reduced margin */
+  font-size: 14px; /* Consistent font size */
+}
+
+.instructions-box ol {
+    margin: 10px auto; /* Reduced margin */
+    text-align: left;
+    display: inline-block; /* Center the list */
+    padding-left: 20px;
+    font-size: 14px; /* Consistent font size */
+}
+
+.instructions-box li {
+    margin-bottom: 4px; /* Reduced margin */
+}
+
+.instruction-gif { /* Style for the instruction GIF */
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+/* Remove default styles for specific elements that now use the .button class */
+#copy-csv, #analyze-ai, #proceed-to-ai-site {
+    /* These elements now use the .button class for styling */
+    /* Any specific overrides for these IDs can go here if needed */
+}
+
+/* Remove the duplicated rules from previous attempts */
+/* th, td, th, tr:nth-child(even), #total-duration, #copy-csv, p, .overlay, .instructions-box rules were duplicated */
+/* Ensure only one definition for each selector exists */
